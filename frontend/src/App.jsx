@@ -1,15 +1,14 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route} from "react-router-dom"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <h1>PriceTracker</h1>
-        <p>Projeto iniciado com sucesso</p>
-      </div>
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+    </Routes>
+    </BrowserRouter>
   )
 }
 
