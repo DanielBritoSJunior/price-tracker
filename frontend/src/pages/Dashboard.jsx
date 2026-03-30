@@ -1,8 +1,16 @@
+import Sidebar from "../components/Sidebar"
+
 function Dashboard() {
     return(
-        <div className="bg-black text-white min-h-screen flex items-center justify-center">
-            <h1>Dashboard</h1>
+        <div className="flex">
+            <Sidebar />
+            
+            <div className="flex-1 bg-[#020617] text-white p-6">
+                <h1 className="text-2xl font-semibold">Dashboard</h1>
+            </div>
         </div>
+        
+        
     )
 }
 
