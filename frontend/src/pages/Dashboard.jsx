@@ -12,9 +12,9 @@ function Dashboard() {
                 <Header />
 
                 <div className="grid grid-cols-3 gap-6 mt-6">
-                    <StatCard title="Total Products" value="12" color="bg-blue-500" />
-                    <StatCard title="Price Drops" value="3" color="bg-green-500" />
-                    <StatCard title="Price Increases" value="2" color="bg-red-500" />
+                    <StatCard title="Total de Produtos" value="12" color="bg-blue-500" />
+                    <StatCard title="Quedas de Preço" value="3" color="bg-green-500" />
+                    <StatCard title="Aumentos" value="2" color="bg-red-500" />
                 </div>
 
                 <div className="mt-10 grid grid-cols-3 gap-6">

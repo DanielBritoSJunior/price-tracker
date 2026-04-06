@@ -17,16 +17,16 @@ function Sidebar() {
                 </button>
 
                 <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition">
-                    My Products
+                    Meus Produtos
                 </button>
 
                 <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition" 
                 onClick={() => navigate("/add-product")}>
-                    Add Product
+                    Aicionar Produtos
                 </button>
 
                 <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition">
-                    Settings
+                    Configurações
                 </button>
             </nav>
         </div>

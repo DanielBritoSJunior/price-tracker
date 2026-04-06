@@ -23,7 +23,7 @@ function ProductCard({ image, name, price, change }) {
           </span>
 
           <button className="bg-[#1e293b] px-3 py-2 rounded-lg hover:bg-[#334155]">
-            Details
+            Detalhes
           </button>
         </div>
       </div>
