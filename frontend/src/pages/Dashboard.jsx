@@ -1,16 +1,15 @@
+import Header from "../components/Header"
 import Sidebar from "../components/Sidebar"
 
 function Dashboard() {
     return(
-        <div className="flex">
+        <div className="flex min-h-screen bg-[#020617]">
             <Sidebar />
             
-            <div className="flex-1 bg-[#020617] text-white p-6">
-                <h1 className="text-2xl font-semibold">Dashboard</h1>
+            <div className="flex-1 p-6">
+               <Header />
             </div>
         </div>
-        
-        
     )
 }
 
