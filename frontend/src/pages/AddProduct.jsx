@@ -1,17 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import { use, useState } from "react";
 
-function AddProduct() {
-    const navigate = useNavigate();
-
-    const [formData, setFormData] = useState({
+const initialFormData = {
         url: "",
         name: "",
         price: "",
         store: "",
         category: "",
         imageUrl: "",
-    })
+    };
+
+function AddProduct() {
+    const navigate = useNavigate();
+
+    const [formData, setFormData] = useState(initialFormData);
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -27,6 +29,7 @@ function AddProduct() {
         e.preventDefault()
 
         console.log(formData)
+        setFormData(initialFormData)
     }
     return (
         <div className="min-h-screen bg-[#020617] text-white p-6 flex justify-center">
