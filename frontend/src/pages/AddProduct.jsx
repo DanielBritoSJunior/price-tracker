@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { use, useState } from "react";
+import { createProduct } from "../services/productService";
 
 const initialFormData = {
         url: "",
@@ -25,12 +26,20 @@ function AddProduct() {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
-        console.log(formData)
-        setFormData(initialFormData)
+        try {
+            const response = await createProduct(formData)
+
+            console.log("Resposta da API:", response.data)
+            setFormData(initialFormData)
+        } catch (error) {
+            console.error("Erro ao cadastrar produto:", error)
+        }
     }
+
+
     return (
         <div className="min-h-screen bg-[#020617] text-white p-6 flex justify-center">
             <div className="w-full max-w-4xl">

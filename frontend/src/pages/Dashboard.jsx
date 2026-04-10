@@ -17,49 +17,7 @@ function Dashboard() {
                     <StatCard title="Aumentos" value="2" color="bg-red-500" />
                 </div>
 
-                <div className="mt-10 grid grid-cols-3 gap-6">
-                <ProductCard
-                    image="https://via.placeholder.com/100"
-                    name="RTX 4060"
-                    price="1800"
-                    change={-5}
-                />
-
-                <ProductCard
-                    image="https://via.placeholder.com/100"
-                    name="Ryzen 5 5600"
-                    price="750"
-                    change={3}
-                />
-
-                <ProductCard
-                    image="https://via.placeholder.com/100"
-                    name="Ryzen 5 5600"
-                    price="750"
-                    change={3}
-                />
-
-                <ProductCard
-                    image="https://via.placeholder.com/100"
-                    name="Ryzen 5 5600"
-                    price="750"
-                    change={3}
-                />
-
-                <ProductCard
-                    image="https://via.placeholder.com/100"
-                    name="Ryzen 5 5600"
-                    price="750"
-                    change={3}
-                />
-
-                <ProductCard
-                    image="https://via.placeholder.com/100"
-                    name="Ryzen 5 5600"
-                    price="750"
-                    change={3}
-                />
-            </div>
+                <div className="mt-10 grid grid-cols-3 gap-6"></div>
             </div>
 
             

@@ -11,6 +11,17 @@ app.get("/", (req, res) => {
     res.send("API do PriceTracker rodando")
 })
 
+app.post("/products", (req, res) => {
+    const product = req.body
+
+    console.log("Produto recebido:", product)
+
+    res.status(201).json({
+        message: "Produto recebido com sucesso",
+        product,
+    })
+})
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
