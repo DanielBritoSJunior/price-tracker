@@ -22,7 +22,7 @@ function Sidebar() {
 
                 <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition" 
                 onClick={() => navigate("/add-product")}>
-                    Aicionar Produtos
+                    Adicionar Produtos
                 </button>
 
                 <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition">
