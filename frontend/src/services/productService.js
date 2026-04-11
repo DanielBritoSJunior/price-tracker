@@ -7,3 +7,7 @@ const api = axios.create({
 export const createProduct = (productData) => {
     return api.post("/products", productData)
 }
+
+export const getProducts = () => {
+    return api.get("/products")
+}
