@@ -1,35 +1,62 @@
-import { useNavigate } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom"
+import { LayoutGrid, Package, Plus, Settings, TrendingUp } from "lucide-react"
 
 function Sidebar() {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const menuItems = [
+        { label: "Dashboard", path: "/", icon: LayoutGrid },
+        { label: "Meus Produtos", path: "/meus-produtos", icon: Package },
+        { label: "Adicionar Produto", path: "/add-product", icon: Plus },
+        { label: "Configurações", path: "/configuracoes", icon: Settings },
+    ]
 
     return (
-        <div className="w-64 h-screen bg-[#0f172a] text-white p-5 flex flex-col">
-            <div className="mb-10">
-                <h1 className="text-2xl font-bold">PriceTracker</h1>
-                <p className="text-gray-400">Monitore seus preços</p>
+        <aside className="w-64 min-h-screen bg-[#091224] border-r border-[#1a2740] flex flex-col justify-between">
+            <div>
+                <div className="p-6 border-b border-[#1a2740]">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-2xl bg-[hsla(160,84%,39%,0.15)] flex items-center justify-center">
+                            <TrendingUp size={18} className="text-[hsl(160,84%,39%)]" />
+                        </div>
+
+                        <div>
+                            <h1 className="text-xl font-bold leading-none">PriceTracker</h1>
+                            <p className="text-sm text-slate-400 mt-1">Monitore seus preços</p>
+                        </div>
+                    </div>
+                </div>
+
+                <nav className="p-4 flex flex-col gap-2">
+                    {menuItems.map((item) => {
+                        const Icon = item.icon
+                        const isActive = location.pathname === item.path
+
+                        return (
+                            <button
+                                key={item.path}
+                                onClick={() => navigate(item.path)}
+                                className={`flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-200 ${isActive
+                                        ? "bg-[hsla(160,84%,39%,0.12)] text-[hsl(160,84%,39%)]"
+                                        : "text-slate-400 hover:bg-[#101b31] hover:text-white"
+                                    }`}
+                            >
+                                <Icon
+                                    size={18}
+                                    className={isActive ? "text-[hsl(160,84%,39%)]" : "text-slate-400"}
+                                />
+                                <span className="font-medium">{item.label}</span>
+                            </button>
+                        )
+                    })}
+                </nav>
             </div>
 
-            <nav className="flex flex-col gap-4">
-                <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition">
-                    Dashboard
-                </button>
-
-                <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition">
-                    Meus Produtos
-                </button>
-
-                <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition" 
-                onClick={() => navigate("/add-product")}>
-                    Adicionar Produtos
-                </button>
-
-                <button className="text-left px-4 py-2 rounded-lg bg-[#1e293b] hover:bg-[#334155] transition">
-                    Configurações
-                </button>
-            </nav>
-        </div>
+            <div className="p-6 border-t border-[#1a2740]">
+                <p className="text-sm text-slate-500">v1.0 • Price Tracker</p>
+            </div>
+        </aside>
     )
 }
 

@@ -27,7 +27,7 @@ function Dashboard() {
     const priceIncreases = products.filter((product) => Number(product.change) > 0).length
 
     return (
-        <div className="flex min-h-screen bg-[#020617]">
+        <div className="min-h-screen bg-[#020817] text-white flex">
             <Sidebar />
 
             <div className="flex-1 p-6">
@@ -39,14 +39,14 @@ function Dashboard() {
                     <StatCard title="Aumentos" value={priceIncreases} color="bg-red-500" />
                 </div>
 
-                <div className="mt-10 grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-4 gap-4 mt-6">
                     {products.map((product, index) => (
-                        <ProductCard 
-                        key={index}
-                        imageUrl={product.imageUrl || "https://via.placeholder.com/300" }
-                        name={product.name}
-                        price={product.price}
-                        change={product.change || 0}
+                        <ProductCard
+                            key={index}
+                            imageUrl={product.imageUrl || "https://via.placeholder.com/300"}
+                            name={product.name}
+                            price={product.price}
+                            change={product.change || 0}
                         />
                     ))}
                 </div>

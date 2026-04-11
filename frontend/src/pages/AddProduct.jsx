@@ -3,13 +3,13 @@ import { use, useState } from "react";
 import { createProduct } from "../services/productService";
 
 const initialFormData = {
-        url: "",
-        name: "",
-        price: "",
-        store: "",
-        category: "",
-        imageUrl: "",
-    };
+    url: "",
+    name: "",
+    price: "",
+    store: "",
+    category: "",
+    imageUrl: "",
+};
 
 function AddProduct() {
     const navigate = useNavigate();

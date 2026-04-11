@@ -1,15 +1,17 @@
-function StatCard({ title, value, color}) {
+function StatCard({ title, value, subtitle, icon, iconBg }) {
     return (
-        <div className="bg-[#0f172a] p-5 rounded-xl lfex flex-col gap-2">
-            <span className=" text-gray-400 text-sm">{title}</span>
+        <div className="bg-[#091224] border border-[#1a2740] rounded-2xl p-6 flex items-start justify-between">
+            <div>
+                <p className="text-xs tracking-[0.18em] uppercase text-slate-400">{title}</p>
+                <h2 className="text-4xl font-bold text-white mt-3">{value}</h2>
+                <p className="text-sm text-slate-400 mt-2">{subtitle}</p>
+            </div>
 
-            <div className="flex items-center justify-between">
-                <h2 className=" text-2xl font-bold text-white">{value}</h2>
-
-                <div className={`w-3 h-3 rounded-full ${color}`}></div>
+            <div className={`w-11 h-11 rounded-2xl flex items-center justify-center ${iconBg}`}>
+                {icon}
             </div>
         </div>
     )
 }
 
-export default StatCard
+export default StatCard;
