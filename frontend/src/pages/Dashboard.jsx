@@ -4,10 +4,21 @@ import StatCard from "../components/StatCard"
 import ProductCard from "../components/ProductCard"
 import { getProducts, deleteProduct } from "../services/productService"
 import { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom";
 
 function Dashboard() {
 
     const [products, setProducts] = useState([])
+    const location = useLocation();
+
+    const fetchProducts = async () => {
+        try {
+            const response = await getProducts();
+            setProducts(response.data);
+        } catch (error) {
+            console.error("Erro ao buscar produtos:", error);
+        }
+    };
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -21,6 +32,12 @@ function Dashboard() {
 
         fetchProducts()
     }, [])
+
+    useEffect(() => {
+        if (location.state?.refresh) {
+            fetchProducts();
+        }
+    }, [location.state]);
 
     const totalProducts = products.length
     const priceDrops = products.filter((product) => Number(product.change) < 0).length

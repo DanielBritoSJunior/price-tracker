@@ -27,17 +27,18 @@ function AddProduct() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         try {
-            const response = await createProduct(formData)
+            await createProduct(formData);
 
-            console.log("Resposta da API:", response.data)
-            setFormData(initialFormData)
+            setFormData(initialFormData);
+
+            navigate("/", { state: { refresh: true } });
         } catch (error) {
-            console.error("Erro ao cadastrar produto:", error)
+            console.error("Erro ao cadastrar produto:", error);
         }
-    }
+    };
 
 
     return (
