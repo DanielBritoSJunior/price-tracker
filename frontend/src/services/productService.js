@@ -11,3 +11,7 @@ export const createProduct = (productData) => {
 export const getProducts = () => {
     return api.get("/products")
 }
+
+export const deleteProduct = (id) => {
+  return api.delete(`/products/${id}`);
+}

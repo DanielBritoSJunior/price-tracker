@@ -13,18 +13,18 @@ app.get("/", (req, res) => {
 })
 
 app.post("/products", (req, res) => {
-    const product = req.body;
+  const product = {
+    id: Date.now(),
+    ...req.body,
+  };
 
-    products.push(product);
+  products.push(product);
 
-    console.log("Produto salvo:", product);
-
-    res.status(201).json({
-        message: "Produto salvo com sucesso",
-        product,
-    });
-});
-
+  res.status(201).json({
+    message: "Produto salvo com sucesso",
+    product,
+  })
+})
 app.get("/products", (req, res) => {
     res.json(products);
 })
@@ -34,3 +34,21 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`)
 })
+
+app.delete("/products/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const productExists = products.some((product) => product.id === id);
+
+  if (!productExists) {
+    return res.status(404).json({
+      message: "Produto não encontrado",
+    });
+  }
+
+  products = products.filter((product) => product.id !== id);
+
+  res.json({
+    message: "Produto removido com sucesso",
+  });
+});

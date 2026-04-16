@@ -2,7 +2,7 @@ import Header from "../components/Header"
 import Sidebar from "../components/Sidebar"
 import StatCard from "../components/StatCard"
 import ProductCard from "../components/ProductCard"
-import { getProducts } from "../services/productService"
+import { getProducts, deleteProduct } from "../services/productService"
 import { useEffect, useState } from "react"
 
 function Dashboard() {
@@ -26,6 +26,17 @@ function Dashboard() {
     const priceDrops = products.filter((product) => Number(product.change) < 0).length
     const priceIncreases = products.filter((product) => Number(product.change) > 0).length
 
+    const handleDeleteProduct = async (id) => {
+        try {
+            await deleteProduct(id)
+
+            setProducts((prevProducts) =>
+                prevProducts.filter((product) => product.id !== id))
+        } catch (error) {
+            console.error("Erro ao deletar produto:", error)
+        }
+    }
+
     return (
         <div className="min-h-screen bg-[#020817] text-white flex">
             <Sidebar />
@@ -47,6 +58,8 @@ function Dashboard() {
                             name={product.name}
                             price={product.price}
                             change={product.change || 0}
+                            oldPrice={product.oldPrice || ""}
+                            onDelete={() => handleDeleteProduct(product.id)}
                         />
                     ))}
                 </div>

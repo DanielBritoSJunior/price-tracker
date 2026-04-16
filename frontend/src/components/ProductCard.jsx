@@ -1,6 +1,6 @@
 import { Eye, Trash2, ExternalLink } from "lucide-react"
 
-function ProductCard({ image, name, price, oldPrice, change, store }) {
+function ProductCard({ image, name, price, oldPrice, change, store, onDelete }) {
   const isDown = Number(change) < 0
 
   return (
@@ -39,7 +39,9 @@ function ProductCard({ image, name, price, oldPrice, change, store }) {
             Detalhes
           </button>
 
-          <button className="w-11 h-11 rounded-2xl bg-[#101b31] hover:bg-[#16233d] transition flex items-center justify-center text-slate-400">
+          <button 
+          onClick={onDelete}
+          className="w-11 h-11 rounded-2xl bg-[#101b31] hover:bg-[#16233d] transition flex items-center justify-center text-slate-400">
             <Trash2 size={16} />
           </button>
 
