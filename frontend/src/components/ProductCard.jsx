@@ -1,12 +1,12 @@
 import { Eye, Trash2, ExternalLink } from "lucide-react"
 
-function ProductCard({ image, name, price, oldPrice, change, store, onDelete }) {
+function ProductCard({ imageUrl, name, price, oldPrice, change, store, onDelete }) {
   const isDown = Number(change) < 0
 
   return (
     <div className="bg-[#091224] border border-[#1a2740] rounded-2xl overflow-hidden">
       <div className="relative">
-        <img src={image} alt={name} className="w-full h-48 object-cover" />
+        <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
 
         <span className="absolute top-3 left-3 bg-[#2a3347] text-white text-xs font-semibold px-3 py-1 rounded-full">
           {store}

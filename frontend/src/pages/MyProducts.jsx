@@ -2,10 +2,10 @@ import Sidebar from "../components/Sidebar"
 import Header from "../components/Header"
 import ProductCard from "../components/ProductCard"
 import { useEffect, useState } from "react"
-import { getProducts } from "../services/productService"
+import { getProducts, deleteProduct  } from "../services/productService"
 
 function MyProducts() {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     loadProducts();
@@ -20,8 +20,19 @@ function MyProducts() {
     }
   }
 
-    return(
-        <div className="flex min-h-screen bg-[#020617]">
+  const handleDeleteProduct = async (id) => {
+    try {
+      await deleteProduct(id)
+
+      setProducts((prevProducts) =>
+        prevProducts.filter((product) => product.id !== id))
+    } catch (error) {
+      console.error("Erro ao deletar produto:", error)
+    }
+  }
+
+  return (
+    <div className="flex min-h-screen bg-[#020617]">
       <Sidebar />
 
       <div className="flex-1 p-6">
@@ -59,16 +70,17 @@ function MyProducts() {
           {products.map((product) => (
             <ProductCard
               key={product.id}
-              image={product.imageUrl}
+              imageUrl={product.imageUrl}
               name={product.name}
               price={product.price}
               change={-5}
+              onDelete={() => handleDeleteProduct(product.id)}
             />
           ))}
         </div>
       </div>
     </div>
-    )
+  )
 }
 
 export default MyProducts
