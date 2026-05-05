@@ -147,7 +147,7 @@ function AddProduct() {
                         />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 pt-2">
+                    <div className="grid grid-cols-2 gap-4 pt-2 ">
                         <button
                             type="button"
                             onClick={() => navigate("/")}
@@ -158,7 +158,7 @@ function AddProduct() {
 
                         <button
                             type="submit"
-                            className="bg-green-600 hover:bg-green-500 transition rounded-xl py-3 font-medium text-white"
+                            className="bg-[hsla(160,84%,39%,0.25)] hover:bg-[hsl(160,84%,39%)]  transition rounded-xl py-3 font-medium text-white"
                         >
                             Adicionar Produto
                         </button>
