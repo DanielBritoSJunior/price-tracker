@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
         priceIncrease: { type: Boolean, default: false }, // Notificação de aumento de preço desativada por padrão
     } 
 }, {
-    timestamps: true, // Adiciona campos createdAt e updatedAt
+    timestamps: true,
 })
 
 module.exports = mongoose.model('User', userSchema)
