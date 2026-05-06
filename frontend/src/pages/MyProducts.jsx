@@ -1,3 +1,4 @@
+import { api } from "../services/productService";
 import ProductCard from "../components/ProductCard"
 import { useEffect, useState } from "react"
 import { getProducts, deleteProduct } from "../services/productService"

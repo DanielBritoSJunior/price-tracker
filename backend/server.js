@@ -3,11 +3,14 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const Product = require("./models/Product") 
 require("dotenv").config()
+const authRoutes = require("./routes/auth");
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
+
+app.use("/api/auth", authRoutes);
 
 const MONGODB_URI = process.env.MONGODB_URI
 

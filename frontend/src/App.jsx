@@ -3,11 +3,13 @@ import Dashboard from "./pages/Dashboard"
 import AddProduct from "./pages/AddProduct"
 import MyProducts from "./pages/MyProducts"
 import Layout from "./Layout"
+import Login from "./pages/Login"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/login" element={<Login />} />
         {/* Rota pai: Carrega o Layout fixo (Sidebar + Header) */}
         <Route path="/" element={<Layout />}>
           
