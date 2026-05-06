@@ -4,12 +4,15 @@ import AddProduct from "./pages/AddProduct"
 import MyProducts from "./pages/MyProducts"
 import Layout from "./Layout"
 import Login from "./pages/Login"
+import Register from "./pages/Register"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        
         {/* Rota pai: Carrega o Layout fixo (Sidebar + Header) */}
         <Route path="/" element={<Layout />}>
           

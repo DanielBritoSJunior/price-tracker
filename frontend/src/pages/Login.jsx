@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/authService";
+import { Link } from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate();
@@ -143,9 +144,9 @@ function Login() {
 
                 <p className="text-center text-sm text-gray-500 mt-6">
                     Não tem conta?{" "}
-                    <a href="#" className="text-emerald-400 hover:underline font-medium">
+                    <Link href="/register" className="text-emerald-400 hover:underline font-medium">
                         Criar conta
-                    </a>
+                    </Link>
                 </p>
 
             </div>
