@@ -144,7 +144,7 @@ function Login() {
 
                 <p className="text-center text-sm text-gray-500 mt-6">
                     Não tem conta?{" "}
-                    <Link href="/register" className="text-emerald-400 hover:underline font-medium">
+                    <Link to="/register" className="text-emerald-400 hover:underline font-medium">
                         Criar conta
                     </Link>
                 </p>

@@ -71,7 +71,7 @@ function Register() {
                 {/* Cabeçalho */}
                 <div className="flex flex-col items-center mb-6">
                     <div className="bg-emerald-500/10 border border-emerald-500/30 p-3 rounded-2xl mb-3">
-                        <span className="text-3xl text-emerald-500">✨</span>
+                        <span className="text-3xl text-emerald-500">📈</span>
                     </div>
                     <h1 className="text-2xl font-bold tracking-tight">Criar Conta</h1>
                     <p className="text-gray-400 text-sm mt-1">Comece a trackear seus produtos</p>
