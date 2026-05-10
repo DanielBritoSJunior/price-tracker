@@ -1,4 +1,5 @@
 import { Bell, Search } from "lucide-react"
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -18,11 +19,11 @@ function Header() {
                     <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[hsl(160,84%,39%)]" />
                 </div>
 
-                <div className="flex items-center gap-3">
+                <Link to="/profile" className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer">
                     <div className="w-11 h-11 rounded-full bg-[hsla(160,84%,39%,0.15)] border border-[hsla(160,84%,39%,0.25)] flex items-center justify-center text-[hsl(160,84%,39%)] font-semibold text-sm">
                         DB
                     </div>
-                </div>
+                </Link>
             </div>
         </header>
     )

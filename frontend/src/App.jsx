@@ -5,6 +5,7 @@ import MyProducts from "./pages/MyProducts"
 import Layout from "./Layout"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import Profile from "./pages/Profile"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route index element={<Dashboard />} /> {/* path "/" padrão */}
           <Route path="add-product" element={<AddProduct />} />
           <Route path="meus-produtos" element={<MyProducts />} />
+          <Route path="profile" element={<Profile />} />
           
         </Route>
       </Routes>
